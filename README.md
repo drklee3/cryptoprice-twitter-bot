@@ -6,7 +6,7 @@ Simple Twitter bot that tweets cryptocurrency USD prices every hour.
 
 Create a cronjob:
 ```bash
-crontab -e
+$ crontab -e
 ```
 
 Add the following line, adjust to your desired frequency:
