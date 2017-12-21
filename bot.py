@@ -8,10 +8,10 @@ from collections import OrderedDict
 CRYPTO_API_URL = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,BCH,ETH,LTC,XRP,ZEC,ETC&tsyms=USD"
 
 def login():
-    return twitter.Api(consumer_key="",
-        consumer_secret="",
-        access_token_key="",
-        access_token_secret="")
+    return twitter.Api(consumer_key="YOUR_CONSUMER_KEY_HERE",
+        consumer_secret="YOUR_CONSUMER_SECRET_HERE",
+        access_token_key="YOUR_ACCESS_TOKEN_KEY_HERE",
+        access_token_secret="YOUR_ACCESS_TOKEN_SECRET_HERE")
 
 def format_data(data):
     now = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
@@ -38,7 +38,7 @@ def main():
     # login to twitter
     api = login()
     msg = prices()
-    # status = api.PostUpdate(msg, verify_status_length=False)
+    status = api.PostUpdate(msg, verify_status_length=False)
 
 
 if __name__ == "__main__":
