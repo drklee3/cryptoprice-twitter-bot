@@ -20,16 +20,12 @@ def format_data(data):
     for key, value in data.items():
         message += "{}: ${}\n".format(key, value["USD"])
 
-    print(message)
-    print(len(message))
     return message
 
 def prices():
     r = requests.get(CRYPTO_API_URL)
     data = r.json()
-    print(data)
     data = OrderedDict(sorted(data.items(), key=lambda i: i[1]["USD"], reverse=True))
-    print(data)
 
     return format_data(data)
 
